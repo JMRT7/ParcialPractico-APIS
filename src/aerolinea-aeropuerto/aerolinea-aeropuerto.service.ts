@@ -59,8 +59,8 @@ export class AerolineaAeropuertoService {
             throw new BusinessLogicException('La aerolinea con el id dado no fue encontrado', BusinessError.NOT_FOUND);
 
         for (const aeropuerto of aeropuertos) {
-            const persistedDish = await this.aeropuertoRepository.findOne({ where: { aeropuertoId: aeropuerto.aeropuertoId } });
-            if (!persistedDish) 
+            const persistedAirline = await this.aeropuertoRepository.findOne({ where: { aeropuertoId: aeropuerto.aeropuertoId } });
+            if (!persistedAirline) 
                 throw new BusinessLogicException('El aeropuerto con el id dado no fue encontrado', BusinessError.NOT_FOUND);
         }
 
